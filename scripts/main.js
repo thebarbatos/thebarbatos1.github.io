@@ -1,25 +1,23 @@
-var myImage = document.querySelector('img');
+alert('hello!');
 
-myImage.onclick = function() {
-    var mySrc = myImage.getAttribute('src');
-    if(mySrc === 'images/firefox-icon.png') {
-      myImage.setAttribute ('src','images/firefox2.png');
-    } else {
-      myImage.setAttribute ('src','images/firefox-icon.png');
-    }
-}
 var myButton = document.querySelector('button');
 var myHeading = document.querySelector('h1');
-function setUserName() {
-  var myName = prompt('Please enter your name.');
-  localStorage.setItem('name', myName);
-  myHeading.textContent = 'Mozilla is cool, ' + myName;
-  if(!localStorage.getItem('name')) {
-  setUserName();
-} else {
-  var storedName = localStorage.getItem('name');
-  myHeading.textContent = 'Mozilla is cool, ' + storedName;
+
+function setDates() {
+  var myDate = prompt('Please enter date.');
+  localStorage.setItem('date', myDate);
+  myHeading.innerHTML = '1' + myDate;
+}
+if(!localStorage.getItem('date')) {
+  setDates();
+} 
+else {
+  var storeddate = localStorage.getItem('date');
+  myHeading.innerHTML = '1' + storedDate;
 }
 myButton.onclick = function() {
-  setUserName();
+  setDates();
 }
+
+
+
